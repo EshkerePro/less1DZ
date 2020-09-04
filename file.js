@@ -1,3 +1,4 @@
+let fs = require('fs');
 let os = require('os');
 let {EventEmitter} = require('events');
 
@@ -34,6 +35,14 @@ ee.once('x2', () => {
 })
 
 ee.emit('x2');
+
+//
+fs.mkdir('./AllFiles', () => {} );
+
+process.on('unhandledRegection', () => {
+    console.log('ooopss');
+    process.exit(0);
+})
 
 
 module.exports = {
